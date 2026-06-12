@@ -1,16 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-auth.js";
-
-// App Configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyDM9C82uPDtmPktWPE7yOFnFHBkVrXcgJs",
-    authDomain: "wearable-health-device.firebaseapp.com",
-    databaseURL: "https://wearable-health-device-default-rtdb.firebaseio.com",
-    projectId: "wearable-health-device",
-    storageBucket: "wearable-health-device.firebasestorage.app",
-    messagingSenderId: "788068841388",
-    appId: "1:788068841388:web:fac64090f50a13d07a6c09"
-};
+import { firebaseConfig } from "./config.js";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
