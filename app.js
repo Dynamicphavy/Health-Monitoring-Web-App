@@ -15,13 +15,11 @@ emailjs.init(EMAILJS_PUBLIC_KEY);
 const hr = document.getElementById("PR");
 const temp = document.getElementById("Temp");
 const spo2 = document.getElementById("SPO2");
-const steps = document.getElementById("Steps");
 
 // Card Elements
 const hrCard = document.getElementById("PRCard");
 const tempCard = document.getElementById("TempCard");
 const spo2Card = document.getElementById("SPO2Card");
-const stepsCard = document.getElementById("StepsCard")
 
 // ECG Chart Setup
 const ecgData = Array(300).fill(0);
@@ -128,7 +126,6 @@ function sendAlertEmail(data, flags) {
         pulse_rate:  data["pulse-rate"]          ?? "--",
         spo2:        data["blood-oxygen-levels"] ?? "--",
         temperature: data["body-temperature"]    ?? "--",
-        steps:       data.steps                  ?? "--",
         flags:       flagText
     }
 
@@ -214,8 +211,6 @@ function exportAbnormalReport() {
         y += 5;
         doc.text(`Temperature: ${entry.readings["body-temperature"]}°C`, 20, y);
         y += 5;
-        doc.text(`Steps: ${entry.readings.steps}`, 20, y);
-        y += 6;
 
         doc.setTextColor(200, 0, 0);
         doc.setFont("times", "bold");
@@ -248,7 +243,6 @@ onValue(vitalsRef, (snapshot) => {
     hr.textContent = data["pulse-rate"] ?? 0;
     temp.textContent = data["body-temperature"] ?? 0;
     spo2.textContent = data["blood-oxygen-levels"] ?? 0;
-    steps.textContent = data.steps ?? 0;
 
     checkAbnormal(data);
 
