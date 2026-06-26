@@ -79,14 +79,12 @@ const THRESHOLDS = {
     "pulse-rate":          { min: 50, max: 120 },
     "blood-oxygen-levels": { min: 90, max:100 },
     "body-temperature":    { min: 36.1, max: 37.5 },
-    "steps":               { min: 0, max: 99999 }
 };
 
 const cardMap = {
     "pulse-rate":          hrCard,
     "blood-oxygen-levels": spo2Card,
     "body-temperature":    tempCard,
-    "steps":               stepsCard
 }
 
 const abnormalLog = [];
